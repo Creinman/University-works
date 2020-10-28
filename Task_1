@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-f = open("C:/Users/user/desktop/test.txt", "a")
+f = open("C:/results/test.txt", "a")
 x = -10
 def y(x): { 
 y = 0.5 + ((np.sin(x**2))**2-0.5)/(1 + 0.001*(x**2))**2;
