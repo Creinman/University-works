@@ -6,16 +6,14 @@ import matplotlib.pyplot as plt
 from urllib.request  import urlopen as uopn
 import re
 
-tsk_v = 9 #Вариант задания
-#Загрузка файла задания
-pfile = pth('C:/users/user/desktop/новая папка/taskfile.txt')
+tsk_v = 9 
+pfile = pth('./taskfile.txt')
 if not pfile.exists():
     txt = uopn('https://jenyay.net/uploads/Student/Modelling/task_02.txt').read()
     f1 = pfile.open('wb')
     f1.write(txt)
     f1.close()
 
-#Использование файла
 if pfile.exists():
     f2 = pfile.open()
     line = [x for x in f2]
@@ -26,7 +24,6 @@ if pfile.exists():
 else:
     print("Error - file does not exist")
 
-#Присвоение переменных
 D = float(m[1])
 fmin = float(m[2])
 fmax = float(m[3])
@@ -46,8 +43,8 @@ def an(n, x):
     return jn(n, x) / hn(n, x) 
 
 def f_sigma(x):
-    lmbd = c / x #Лямбда
-    k = 2 * pi / lmbd #Волновое число
+    lmbd = c / x 
+    k = 2 * pi / lmbd
     kr = k*r
     Sum = 0+0j
     for n in range(1, 40):
@@ -57,7 +54,7 @@ def f_sigma(x):
 sigma = [f_sigma(x) for x in f]
 
 p = pth('results')
-res = p / 'task_02_307b_Samarkin_15.txt'
+res = p / 'task_02_307b_Zhuravlev_9.txt'
 if not p.exists():
   p.mkdir(exist_ok = True)
 
